@@ -1,0 +1,40 @@
+{
+    "name": "AuditApp_Updates",
+    "query": "SELECT  \n\t\t  O.KeyValue 'ID'\n        , O.DisplayName 'Name'\n\t\t, AU.AttributeName 'Attribute'\n\t\t, AU.ValueOld 'Old'\n        , AU.ValueNew 'New'\n        , OP.Name 'Operation'\n        , OM.DateTime 'Operation DT'\n        , AC.DateTime 'Activity DT'\n        , AT.Name 'Activity'\n        , ST.SystemName 'System'\n        , ST.TableName 'Table'\nFROM AttributeUpdates AU\nINNER JOIN ObjectMutations OM ON OM.ID = AU.ObjectMutationID\nINNER JOIN Operations OP ON OP.ID = OM.OperationID\nINNER JOIN Activities AC ON AC.ID = OM.ActivityID\nINNER JOIN ActivityTypes AT ON AT.ID = AC.ActivityTypeID\nINNER JOIN Objects O ON O.ID = OM.ObjectID\nINNER JOIN SystemTables ST ON ST.ID = O.SystemTableID\nWHERE 1=1\nAND OP.ID = 2\nORDER BY OM.DateTime DESC",
+    "params": [],
+    "columns": [
+        {
+            "name": "ID"
+        },
+        {
+            "name": "Name"
+        },
+        {
+            "name": "Attribute"
+        },
+        {
+            "name": "Old"
+        },
+        {
+            "name": "New"
+        },
+        {
+            "name": "Operation"
+        },
+        {
+            "name": "Operation DT"
+        },
+        {
+            "name": "Activity DT"
+        },
+        {
+            "name": "Activity"
+        },
+        {
+            "name": "System"
+        },
+        {
+            "name": "Table"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "jobdef_name": "AD_NIM_User_Sync",
+    "tasks": [
+        {
+            "type": "crud",
+            "name": "AD_NIM_User_Create",
+            "enabled": true,
+            "threshold": 1
+        },
+        {
+            "type": "crud",
+            "name": "AD_NIM_User_Update",
+            "enabled": true,
+            "threshold": 1
+        },
+        {
+            "type": "crud",
+            "name": "AD_NIM_User_Disable",
+            "enabled": true,
+            "threshold": 1
+        }
+    ]
+}

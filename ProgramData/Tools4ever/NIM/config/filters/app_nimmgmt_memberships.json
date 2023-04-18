@@ -1,0 +1,114 @@
+{
+    "filter_name": "App_NIMMgmt_Memberships",
+    "filter_items": [
+        {
+            "system_name": "internal",
+            "col_name": "memberships",
+            "colrefname": "memberships",
+            "type": "start",
+            "indent": 0,
+            "enabled": true,
+            "index": 0,
+            "child_count": 1
+        },
+        {
+            "type": "and",
+            "indent": 1,
+            "enabled": true,
+            "index": 1,
+            "parent": 0,
+            "child_count": 2
+        },
+        {
+            "field_name": "AccountID",
+            "function_name": "equals",
+            "value_vs_parameter": false,
+            "param_name": "AccountID",
+            "type": "expression",
+            "indent": 2,
+            "enabled": true,
+            "index": 2,
+            "parent": 1,
+            "child_count": 0
+        },
+        {
+            "ref_type": "n-1",
+            "system_name_1": "internal",
+            "col_name_1": "groups",
+            "field_n": "GroupID",
+            "option": "any",
+            "colrefname": "groups",
+            "recursive": false,
+            "type": "reference",
+            "indent": 2,
+            "enabled": true,
+            "index": 3,
+            "parent": 1,
+            "child_count": 0
+        }
+    ],
+    "filter_columns": [
+        {
+            "id": "groups.ID",
+            "order": 1,
+            "name": "groups.ID",
+            "display_name": "ID",
+            "show": true,
+            "field_name": "ID",
+            "colrefname": "groups",
+            "source": "data"
+        },
+        {
+            "id": "groups.Name",
+            "order": 2,
+            "name": "groups.Name",
+            "display_name": "Name",
+            "show": true,
+            "field_name": "Name",
+            "colrefname": "groups",
+            "source": "data"
+        },
+        {
+            "id": "groups.DisplayName",
+            "order": 3,
+            "name": "groups.DisplayName",
+            "display_name": "DisplayName",
+            "show": true,
+            "field_name": "DisplayName",
+            "colrefname": "groups",
+            "source": "data"
+        },
+        {
+            "id": "groups.Description",
+            "order": 4,
+            "name": "groups.Description",
+            "display_name": "Description",
+            "show": true,
+            "field_name": "Description",
+            "colrefname": "groups",
+            "source": "data"
+        }
+    ],
+    "sort_columns": [],
+    "group": {
+        "enabled": true,
+        "count": 1,
+        "field": "groups.ID"
+    },
+    "params": [
+        {
+            "param_name": "AccountID",
+            "param_category": "input",
+            "data_type": "number",
+            "default_value": "",
+            "description": "",
+            "variable_name": ""
+        }
+    ],
+    "appends": [],
+    "exclude": {
+        "enabled": false,
+        "field_name": ""
+    },
+    "lookups": []
+}

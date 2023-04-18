@@ -1,0 +1,34 @@
+{
+    "schema": {
+        "crud_objects": {
+            "Educators": {
+                "resources": {
+                    "CustomFields": {
+                                    "Employee ID": "string*"
+                            }
+                }
+            },
+            "Educators_Pending": {
+                "resources": {
+                    "CustomFields": {
+                                    "Employee ID": "string*"
+                            }
+                }
+            },
+            "Students": {
+                "resources": {
+                    "CustomFields": {
+                                    "Student ID": "string*"
+                            }
+                }
+            },
+            "Students_Pending": {
+                "resources": {
+                    "CustomFields": {
+                                    "Student ID": "string*"
+                            }
+                }
+            }
+        }
+    }
+}

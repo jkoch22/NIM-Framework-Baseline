@@ -1,0 +1,110 @@
+{
+    "filter_name": "App_NIMMgmt_ListUsers",
+    "filter_items": [
+        {
+            "system_name": "internal",
+            "col_name": "users",
+            "colrefname": "users",
+            "type": "start",
+            "indent": 0,
+            "enabled": true,
+            "index": 0,
+            "child_count": 0
+        }
+    ],
+    "filter_columns": [
+        {
+            "id": "users.ID",
+            "order": 1,
+            "name": "users.ID",
+            "display_name": "ID",
+            "show": true,
+            "field_name": "ID",
+            "colrefname": "users",
+            "source": "data"
+        },
+        {
+            "id": "users.Name",
+            "order": 2,
+            "name": "users.Name",
+            "display_name": "Name",
+            "show": true,
+            "field_name": "Name",
+            "colrefname": "users",
+            "source": "data"
+        },
+        {
+            "id": "users.Email",
+            "order": 3,
+            "name": "users.Email",
+            "display_name": "Email",
+            "show": true,
+            "field_name": "Email",
+            "colrefname": "users",
+            "source": "data"
+        },
+        {
+            "id": "users.DisplayName",
+            "order": 4,
+            "name": "users.DisplayName",
+            "display_name": "DisplayName",
+            "show": true,
+            "field_name": "DisplayName",
+            "colrefname": "users",
+            "source": "data"
+        },
+        {
+            "id": "users.ExternalID",
+            "order": 5,
+            "name": "users.ExternalID",
+            "display_name": "ExternalID",
+            "show": true,
+            "field_name": "ExternalID",
+            "colrefname": "users",
+            "source": "data"
+        },
+        {
+            "id": "users.Enabled",
+            "order": 6,
+            "name": "users.Enabled",
+            "display_name": "Enabled",
+            "show": true,
+            "field_name": "Enabled",
+            "colrefname": "users",
+            "source": "data"
+        },
+        {
+            "id": "users.Description",
+            "order": 7,
+            "name": "users.Description",
+            "display_name": "Description",
+            "show": true,
+            "field_name": "Description",
+            "colrefname": "users",
+            "source": "data"
+        },
+        {
+            "id": "users.AuthMethod",
+            "order": 8,
+            "name": "users.AuthMethod",
+            "display_name": "AuthMethod",
+            "show": true,
+            "field_name": "AuthMethod",
+            "colrefname": "users",
+            "source": "data"
+        }
+    ],
+    "sort_columns": [],
+    "group": {
+        "enabled": false,
+        "count": 1,
+        "field": ""
+    },
+    "params": [],
+    "appends": [],
+    "exclude": {
+        "enabled": false,
+        "field_name": ""
+    },
+    "lookups": []
+}

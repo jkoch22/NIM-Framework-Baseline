@@ -1,0 +1,17 @@
+{
+	"schema": {
+		"crud_objects": {
+			"users": {
+				"resources": {
+					"customSchemas": {
+						"Tools4ever": {
+							"ID":"_:string*",
+							"Type":"_:string*",
+							"DeleteDate":"_:string*"
+						}
+					}
+				}
+			}
+		}
+	}
+}

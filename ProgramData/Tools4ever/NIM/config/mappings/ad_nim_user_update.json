@@ -1,0 +1,137 @@
+{
+    "source_name": "AD_NIM_Users_Active[update]",
+    "source_type": "filter",
+    "function_name": "user_update",
+    "namegen": "",
+    "passgen": "",
+    "compare_key": "ID",
+    "manattribs": [
+        "ID"
+    ],
+    "semantics": "update",
+    "mapping_name": "AD_NIM_User_Update",
+    "target_name": "internal.users",
+    "target_type": "system_collection",
+    "map": [
+        {
+            "source": {
+                "type": "empty"
+            },
+            "target": {
+                "field_name": "AuthMethod",
+                "field_type": "string",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "filter",
+                "item_value": "description",
+                "item_type": "string"
+            },
+            "target": {
+                "field_name": "Description",
+                "field_type": "string",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "filter",
+                "item_value": "displayName",
+                "item_type": "string"
+            },
+            "target": {
+                "field_name": "DisplayName",
+                "field_type": "string",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "filter",
+                "item_value": "mail",
+                "item_type": "string"
+            },
+            "target": {
+                "field_name": "Email",
+                "field_type": "string",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "constant",
+                "value": true
+            },
+            "target": {
+                "field_name": "Enabled",
+                "field_type": "boolean",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "empty"
+            },
+            "target": {
+                "field_name": "ExternalID",
+                "field_type": "string",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "filter",
+                "item_value": "ID",
+                "item_type": "number"
+            },
+            "target": {
+                "field_name": "ID",
+                "field_type": "number",
+                "allowance": 2,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "filter",
+                "item_value": "sAMAccountName",
+                "item_type": "string"
+            },
+            "target": {
+                "field_name": "Name",
+                "field_type": "string",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        },
+        {
+            "source": {
+                "type": "empty"
+            },
+            "target": {
+                "field_name": "Password",
+                "field_type": "string",
+                "allowance": 1,
+                "auto": true,
+                "type": "auto"
+            }
+        }
+    ],
+    "nimOnlyKey": false
+}
