@@ -12,6 +12,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 - AD Group Management v1.0
 - AD User Create v1.0
 - Audit App v1.0
+- Dashboard
 - NIM User Management v1.0
 - T4E Template v1.0
 
