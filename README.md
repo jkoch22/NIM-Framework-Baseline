@@ -48,7 +48,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 
 
 # Framework Documentation
-- [Recommended Naming Conventions](docs/NamingConventions.MD)
+- [Recommended Naming Conventions](Tools4ever/docs/NamingConventions.MD)
 
 # Product Documentation
 The official NIM documentation can be found at: https://docs.nimsuite.com
