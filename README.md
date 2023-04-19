@@ -9,11 +9,19 @@ The purpose of this repository to build a framework that can be used as a jump o
 # Features 
 
 ## Apps
+- AD Group Management v1.0
+- AD User Create v1.0
 - Audit App v1.0
 - NIM User Management v1.0
 - T4E Template v1.0
 
 ## Filters
+- AD Group Management v1.0
+    - app_adgroupmanagement_listgroups
+	- app_adgroupmanagement_members
+	- app_adgroupmanagement_members_available
+- AD User Create
+    - app_adusercreate_listusers.json
 - AD NIM Sync
     - ad_nim_users_active
     - ad_nim_users_disable
