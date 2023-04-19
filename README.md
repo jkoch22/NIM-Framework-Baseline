@@ -47,6 +47,8 @@ The purpose of this repository to build a framework that can be used as a jump o
     - ```OneRosterInfiniteCampus``` = Infinite Campus OneRoster v1.2
 
 
+# Framework Documentation
+- [Recommended Naming Conventions](Tools4ever/docs/NamingConventions.MD)
 
-# Documentation
+# Product Documentation
 The official NIM documentation can be found at: https://docs.nimsuite.com
