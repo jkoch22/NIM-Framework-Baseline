@@ -1,0 +1,128 @@
+{
+  "filter_name": "APP_Override_Users_Available",
+  "filter_items": [
+    {
+      "system_name": "EmployeeCSV",
+      "col_name": "Employee",
+      "colrefname": "Employee",
+      "type": "start",
+      "indent": 0,
+      "enabled": true,
+      "index": 0,
+      "child_count": 1
+    },
+    {
+      "ref_type": "n-n",
+      "system_name_n": "internal",
+      "col_name_n": "OverrideFlags",
+      "system_name_link": "intersystem",
+      "col_name_link": "intercol",
+      "field_link_m": "EMPLOYEE",
+      "field_link_n": "ID",
+      "option": "no",
+      "colrefname": "OverrideFlags",
+      "recursive": false,
+      "type": "reference",
+      "indent": 1,
+      "enabled": true,
+      "index": 1,
+      "parent": 0,
+      "child_count": 0
+    }
+  ],
+  "filter_columns": [
+    {
+      "id": "Employee.EMPLOYEE",
+      "order": 1,
+      "name": "Employee.EMPLOYEE",
+      "display_name": "EMPLOYEE",
+      "show": true,
+      "field_name": "EMPLOYEE",
+      "colrefname": "Employee",
+      "source": "data"
+    },
+    {
+      "id": "Employee.LAST_NAME",
+      "order": 2,
+      "name": "Employee.LAST_NAME",
+      "display_name": "LAST_NAME",
+      "show": true,
+      "field_name": "LAST_NAME",
+      "colrefname": "Employee",
+      "source": "data"
+    },
+    {
+      "id": "Employee.FIRST_NAME",
+      "order": 3,
+      "name": "Employee.FIRST_NAME",
+      "display_name": "FIRST_NAME",
+      "show": true,
+      "field_name": "FIRST_NAME",
+      "colrefname": "Employee",
+      "source": "data"
+    },
+    {
+      "id": "Employee.DEPARTMENT",
+      "order": 4,
+      "name": "Employee.DEPARTMENT",
+      "display_name": "DEPARTMENT",
+      "show": true,
+      "field_name": "DEPARTMENT",
+      "colrefname": "Employee",
+      "source": "data"
+    },
+    {
+      "id": "Employee.LOCATION",
+      "order": 5,
+      "name": "Employee.LOCATION",
+      "display_name": "LOCATION",
+      "show": true,
+      "field_name": "LOCATION",
+      "colrefname": "Employee",
+      "source": "data"
+    },
+    {
+      "id": "Employee.DEPARTMENT_NAME",
+      "order": 6,
+      "name": "Employee.DEPARTMENT_NAME",
+      "display_name": "DEPARTMENT_NAME",
+      "show": true,
+      "field_name": "DEPARTMENT_NAME",
+      "colrefname": "Employee",
+      "source": "data"
+    },
+    {
+      "id": "Employee.calc_FirstName_TitleCase",
+      "order": 7,
+      "name": "Employee.calc_FirstName_TitleCase",
+      "display_name": "calc_FirstName_TitleCase",
+      "show": true,
+      "field_name": "calc_FirstName_TitleCase",
+      "colrefname": "Employee",
+      "source": "data"
+    },
+    {
+      "id": "Employee.calc_LastName_TitleCase",
+      "order": 8,
+      "name": "Employee.calc_LastName_TitleCase",
+      "display_name": "calc_LastName_TitleCase",
+      "show": true,
+      "field_name": "calc_LastName_TitleCase",
+      "colrefname": "Employee",
+      "source": "data"
+    }
+  ],
+  "sort_columns": [],
+  "group": {
+    "enabled": false,
+    "count": 1,
+    "field": ""
+  },
+  "params": [],
+  "appends": [],
+  "exclude": {
+    "enabled": false,
+    "field_name": ""
+  },
+  "lookups": []
+}

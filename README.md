@@ -6,6 +6,10 @@
 # Purpose
 The purpose of this repository to build a framework that can be used as a jump off point to build a lifecycle automation in NIM. This will also contain other useful tools to help you enhance you experience with NIM.
 
+# Installation
+- Copy files to root of installed drive
+- Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
+
 # Features 
 
 ## Apps
@@ -15,6 +19,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Dashboard
 - NIM User Management v1.0
 - T4E Template v1.0
+- Override Flags v1.0
 
 ## Filters
 - AD Group Management v1.0
@@ -27,9 +32,12 @@ The purpose of this repository to build a framework that can be used as a jump o
     - ad_nim_users_active
     - ad_nim_users_disable
 - NIM User Management
-   - app_nimmgmt_listusers
-   - app_nimmgmt_memberships
-   - app_nmimgmt_membership_available
+    - app_nimmgmt_listusers
+    - app_nimmgmt_memberships
+    - app_nmimgmt_membership_available
+- Override Flags
+	- app_override_users
+	- app_override_users_available
 
 ## Mappings
 - AD NIM Sync
@@ -57,7 +65,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 
 
 # Framework Documentation
-- [Recommended Naming Conventions](Tools4ever/docs/NamingConventions.MD)
+- [Recommended Naming Conventions](Tools4ever/docs/NamingConventions.md)
 
 # Product Documentation
 The official NIM documentation can be found at: https://docs.nimsuite.com

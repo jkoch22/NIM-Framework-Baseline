@@ -1,0 +1,63 @@
+{
+    "type": "sync",
+    "name": "AD_NIM_Sync",
+    "enabled": false,
+    "schedule": {
+        "second": {
+            "mode": 1,
+            "at": 0,
+            "n": 1,
+            "list": []
+        },
+        "minute": {
+            "mode": 1,
+            "at": 15,
+            "n": 1,
+            "list": []
+        },
+        "hour": {
+            "mode": 1,
+            "at": 0,
+            "n": 1,
+            "list": []
+        },
+        "day_month": {
+            "mode": 0,
+            "at": 0,
+            "n": 1,
+            "list": []
+        },
+        "month": {
+            "mode": 0,
+            "at": 0,
+            "n": 1,
+            "list": []
+        },
+        "day_week": {
+            "mode": 0,
+            "at": 0,
+            "n": 1,
+            "list": []
+        }
+    },
+    "config": {
+        "collect_enabled": true,
+        "eval_enabled": false,
+        "jobs_enabled": true,
+        "collect": [
+            {
+                "name": "AD",
+                "max_age": "120"
+            }
+        ],
+        "eval": {
+            "minutes": 60,
+            "template": ""
+        },
+        "jobs": [
+            {
+                "name": "AD_NIM_User_Sync"
+            }
+        ]
+    }
+}
