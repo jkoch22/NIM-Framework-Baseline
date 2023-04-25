@@ -1,0 +1,2 @@
+﻿"ID","Type","Name","ShortName","ADOU","GoogleOU","HomeFolder","HomeDrive"
+"1","Employee","Test Elementary School","TES","OU=TES,DC=demo,DC=local","/TES","\\OldServer\Employees","H:"
