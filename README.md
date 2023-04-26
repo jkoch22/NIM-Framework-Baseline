@@ -42,7 +42,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 - NIM User Management
     - app_nimmgmt_listusers
     - app_nimmgmt_memberships
-    - app_nmimgmt_membership_available
+    - app_nimmgmt_membership_available
 - Override Flags
 	- app_override_users
 	- app_override_users_available
