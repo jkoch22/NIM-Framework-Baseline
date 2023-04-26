@@ -202,32 +202,6 @@
         "type": "empty"
     },
     "variables": [
-        {
-            "name": "selected_email",
-            "type": 0,
-            "cid": -1,
-            "initialize": false,
-            "stop_propagation": false,
-            "test_only": true,
-            "data_value": "testemail1",
-            "data_type": 0
-        },
-        {
-            "name": "selected_enabledState",
-            "type": 1,
-            "cid": -1,
-            "javascript": {
-                "javascript": "let result = '';\n\ntry {\n  if(data['selected_enabled'] == '1')\n  {\n   \treturn 'Enabled' \n  }\n    \n} catch(e){}\n\nreturn result;"
-            }
-        },
-        {
-            "name": "new_enabledState",
-            "type": 1,
-            "cid": -1,
-            "javascript": {
-                "javascript": "let result = data['selected_enabled'];\n\ntry {\n  if(data['Enabled'])\n  {\n   \treturn 1\n  }\n  else\n  {\n  \treturn 0\n  }\n    \n} catch(e){}\n\nreturn result;"
-            }
-        }
     ],
     "name_generator": {
         "name": "",
