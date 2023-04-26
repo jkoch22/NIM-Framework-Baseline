@@ -18,6 +18,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 
 ## Apps
 - AD Group Management v1.1
+- AD User Correlation
 - AD User Create v1.1
 - AD User Duplicates v1.1
 - Audit App v1.0
@@ -32,6 +33,8 @@ The purpose of this repository to build a framework that can be used as a jump o
     - app_adgroupmanagement_listgroups
 	- app_adgroupmanagement_members
 	- app_adgroupmanagement_members_available
+- AD User Correlation
+    - app_adusercorrelation_listusers
 - AD User Create
     - app_adusercreate_listusers.json
 - AD User Duplicates
