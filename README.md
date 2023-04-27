@@ -6,6 +6,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 # Installation
 - Copy files to root of installed drive
 - Configure AD System
+	- See [Baseline Config](https://github.com/Tools4ever-NIM/NIM-System-PowerShell-Microsoft-Active-Directory/blob/main/Config.Baseline.json)
 - Configure Internal System
 - Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
 - Install Config Locations app
