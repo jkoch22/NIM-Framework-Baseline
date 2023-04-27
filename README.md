@@ -12,7 +12,8 @@ The purpose of this repository to build a framework that can be used as a jump o
     - Create "ConfigLocation" lookup table by importing /Tools4ever/data/apps/ConfigLocation/LookupTable_ConfigLocation.csv
 	- Add to Internal Setup
 - Configure Relations
-	- internal.users.External > AD.User.objectGUID
+	- internal.users.External > AD.Users.objectGUID
+	- internal.OverrideFlags.ID > AD.Users.employeeID
 
 
 # Features 
