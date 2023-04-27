@@ -44,6 +44,8 @@ The purpose of this repository to build a framework that can be used as a jump o
     - app_adusercreate_listusers.json
 - AD User Duplicates
     - app_aduserduplicates_list_users
+- AD User Password Expiry
+    - app_report_users_passwordexpiry
 - AD NIM Sync
     - ad_nim_users_active
     - ad_nim_users_disable
@@ -77,10 +79,18 @@ The purpose of this repository to build a framework that can be used as a jump o
     - auditapp_deletes
     - auditapp_last7days
     - auditapp_updates
-   
+
+## Notification Templates
+- AD User Password Expiry
+	- ad_user_passwordexpiry
+
 ## Scheduler
-- AD_NIM Sync
+- AD NIM Sync
+	- Syncs Domain Admins from AD to NIM Internal Users
+- AD User Password Expiry
+	- Notifies user by email when password is expiring in 15, 7, 3, 2, 1 day(s)
 - Retention
+	- Cleans up logging data
     
 ## REST Connectors
 - Custom Schemas
