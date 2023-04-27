@@ -8,8 +8,12 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Configure AD System
 	- See [Baseline Config](https://github.com/Tools4ever-NIM/NIM-System-PowerShell-Microsoft-Active-Directory/blob/main/Config.Baseline.json)
 - Configure Internal System
-- Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
-- Install Config Locations app
+	- Check all tables
+	- Add Internal Mamberships Relations<br/>
+		![image](https://user-images.githubusercontent.com/24281600/234962252-3b746272-2c8b-47b8-9cc7-b2325e7d64ac.png)
+- Setup Override Flags app
+    - Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
+- Setup Config Locations app
     - Create "ConfigLocation" lookup table by importing /Tools4ever/data/apps/ConfigLocation/LookupTable_ConfigLocation.csv
 	- Add to Internal Setup
 - Configure Relations
