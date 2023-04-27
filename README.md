@@ -15,7 +15,7 @@ The purpose of this repository to build a framework that can be used as a jump o
     - Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
 - Setup Config Locations app
     - Create "ConfigLocation" lookup table by importing /Tools4ever/data/apps/ConfigLocation/LookupTable_ConfigLocation.csv
-	- Add to Internal Setup
+	- Configure Internal System > Add "ConfigLocation" Table
 - Configure Relations
 	- internal.users.ExternalID > AD.Users.objectGUID
 	- internal.OverrideFlags.ID > AD.Users.employeeID
