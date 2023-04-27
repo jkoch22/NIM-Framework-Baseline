@@ -5,10 +5,14 @@ The purpose of this repository to build a framework that can be used as a jump o
 
 # Installation
 - Copy files to root of installed drive
+- Configure AD System
+- Configure Internal System
 - Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
 - Install Config Locations app
     - Create "ConfigLocation" lookup table by importing /Tools4ever/data/apps/ConfigLocation/LookupTable_ConfigLocation.csv
 	- Add to Internal Setup
+- Configure Relations
+	- internal.users.External > AD.User.objectGUID
 
 
 # Features 
