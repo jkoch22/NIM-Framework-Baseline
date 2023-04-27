@@ -6,11 +6,16 @@ The purpose of this repository to build a framework that can be used as a jump o
 # Installation
 - Copy files to root of installed drive
 - Configure AD System
+	- See [Baseline Config](https://github.com/Tools4ever-NIM/NIM-System-PowerShell-Microsoft-Active-Directory/blob/main/Config.Baseline.json)
 - Configure Internal System
-- Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
-- Install Config Locations app
+	- Check all tables
+	- Add Internal Mamberships Relations<br/>
+		![image](https://user-images.githubusercontent.com/24281600/234962252-3b746272-2c8b-47b8-9cc7-b2325e7d64ac.png)
+- Setup Override Flags app
+    - Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
+- Setup Config Locations app
     - Create "ConfigLocation" lookup table by importing /Tools4ever/data/apps/ConfigLocation/LookupTable_ConfigLocation.csv
-	- Add to Internal Setup
+	- Configure Internal System > Add "ConfigLocation" Table
 - Configure Relations
 	- internal.users.ExternalID > AD.Users.objectGUID
 	- internal.OverrideFlags.ID > AD.Users.employeeID
@@ -43,6 +48,8 @@ The purpose of this repository to build a framework that can be used as a jump o
     - app_adusercreate_listusers.json
 - AD User Duplicates
     - app_aduserduplicates_list_users
+- AD User Password Expiry
+    - app_report_users_passwordexpiry
 - AD NIM Sync
     - ad_nim_users_active
     - ad_nim_users_disable
@@ -76,10 +83,18 @@ The purpose of this repository to build a framework that can be used as a jump o
     - auditapp_deletes
     - auditapp_last7days
     - auditapp_updates
-   
+
+## Notification Templates
+- AD User Password Expiry
+	- ad_user_passwordexpiry
+
 ## Scheduler
-- AD_NIM Sync
+- AD NIM Sync
+	- Syncs Domain Admins from AD to NIM Internal Users
+- AD User Password Expiry
+	- Notifies user by email when password is expiring in 15, 7, 3, 2, 1 day(s)
 - Retention
+	- Cleans up logging data
     
 ## REST Connectors
 - Custom Schemas
