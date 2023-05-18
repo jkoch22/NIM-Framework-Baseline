@@ -1,0 +1,1 @@
+Dism /online /Enable-Feature /All /FeatureName:ActiveDirectory-PowerShell /FeatureName:DirectoryServices-AdministrativeCenter /FeatureName:DirectoryServices-ADAM-Tools /FeatureName:DirectoryServices-DomainController-Tools
