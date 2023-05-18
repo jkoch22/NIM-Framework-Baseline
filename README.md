@@ -114,6 +114,9 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Windows Defender
     - Set_Windows_Defender_Exclusions.ps1
 	    - Configure the Windows Defender exclusions for the NIM Service.
+- AD Tools
+    - Install_AD_Tools.ps1
+        - Install Active Directory Tools
 		
 
 # Framework Documentation
