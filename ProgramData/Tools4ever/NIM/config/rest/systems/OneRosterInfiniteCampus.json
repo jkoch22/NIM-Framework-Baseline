@@ -1,6 +1,18 @@
 {
 	"schema": {
 		"crud_objects": {
+			"orgs": {
+				"resources": {
+					"metadata": {
+						"ic_address": {
+							"city":"string*",
+							"firstLine":"string*",
+							"state":"string*",
+							"zipcode":"string*"
+						}
+					}
+				}
+			},
 			"users": {
 				"resources": {
 					"metadata": {
