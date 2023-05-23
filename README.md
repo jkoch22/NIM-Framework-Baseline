@@ -7,6 +7,8 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Copy files to root of installed drive
 - Configure AD System
     - See [Baseline Config](https://github.com/Tools4ever-NIM/NIM-System-PowerShell-Microsoft-Active-Directory/blob/main/Config.Baseline.json)
+- Configure Google System
+    - See [Baseline Config](https://github.com/Tools4ever-NIM/NIM-System-REST-Google-Workspace/blob/main/Config.Provisioning.json)
 - Configure Internal System
     - Check all tables
     - Add Internal Mamberships Relations<br/>
