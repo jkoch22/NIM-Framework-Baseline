@@ -36,6 +36,8 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Audit App v1.0
 - Config Locations
 - Dashboard
+- Google User Correlation
+- Google User Duplicates
 - NIM User Management v1.1
 - T4E Template
 - Override Flags v1.1
@@ -56,6 +58,10 @@ The purpose of this repository to build a framework that can be used as a jump o
 - AD NIM Sync
     - ad_nim_users_active
     - ad_nim_users_disable
+- Google User Correlation
+    - apps_googleusercorrelation_listusers
+- Google User Duplicates
+    - apps_googleusersduplicates_listusers
 - NIM User Management
     - app_nimmgmt_listusers
     - app_nimmgmt_memberships
@@ -86,6 +92,8 @@ The purpose of this repository to build a framework that can be used as a jump o
     - auditapp_deletes
     - auditapp_last7days
     - auditapp_updates
+- Google User Duplicates
+    - googleuserduplicates_duplicatesusersbyid 
 
 ## Notification Templates
 - AD User Password Expiry
