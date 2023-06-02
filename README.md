@@ -4,27 +4,9 @@
 The purpose of this repository to build a framework that can be used as a jump off point to build a lifecycle automation in NIM. This will also contain other useful tools to help you enhance you experience with NIM.
 
 # Installation
-- Copy files to root of installed drive
-- Configure AD System
-    - See [Baseline Config](https://github.com/Tools4ever-NIM/NIM-System-PowerShell-Microsoft-Active-Directory/blob/main/Config.Baseline.json)
-- Configure Google System
-    - See [Baseline Config](https://github.com/Tools4ever-NIM/NIM-System-REST-Google-Workspace/blob/main/Config.Provisioning.json)
-- Configure Internal System
-    - Check all tables
-    - Add Internal Mamberships Relations<br/>
-		![image](https://user-images.githubusercontent.com/24281600/234962252-3b746272-2c8b-47b8-9cc7-b2325e7d64ac.png)
-- Setup Override Flags app
-    - Implement Override Flags lookup table [see here](https://github.com/Tools4ever-NIM/NIM-App-NIM-OverrideFlags/blob/main/README.md)
-- Setup Config Locations app
-    - Create "ConfigLocation" lookup table by importing /Tools4ever/data/apps/ConfigLocation/LookupTable_ConfigLocation.csv
-- Configure Internal System
-    - Add "ConfigLocation" Table
-- Configure Relations
-    - internal.users.ExternalID > AD.Users.objectGUID
-    - internal.OverrideFlags.ID > AD.Users.employeeID
+- Settings > Backup & Restore > Import Backup JSON
+- Restore Backup
 - Configure LDAP Server
-
-
 
 # Features 
 
@@ -33,7 +15,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 - AD User Correlation
 - AD User Create v1.1
 - AD User Duplicates v1.1
-- Audit App v1.0
+- Audit App v1.1
 - Config Locations
 - Dashboard
 - Google User Correlation
