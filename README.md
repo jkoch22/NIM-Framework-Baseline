@@ -8,7 +8,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 
 
 `
-	iex (iwr https://raw.githubusercontent.com/Tools4ever-NIM/NIM-Framework-Baseline/0.5/Tools4ever/scripts/Install_Framework.ps1).Content
+	iex (iwr https://raw.githubusercontent.com/Tools4ever-NIM/NIM-Framework-Baseline/main/Tools4ever/scripts/Install_Framework.ps1).Content
 `
 
 - Settings > Backup & Restore > Import Backup JSON
