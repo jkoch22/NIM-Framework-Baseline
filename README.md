@@ -4,6 +4,13 @@
 The purpose of this repository to build a framework that can be used as a jump off point to build a lifecycle automation in NIM. This will also contain other useful tools to help you enhance you experience with NIM.
 
 # Installation
+- Install Latest Framework
+
+
+`
+	iex (iwr https://raw.githubusercontent.com/Tools4ever-NIM/NIM-Framework-Baseline/0.5/Tools4ever/scripts/Install_Framework.ps1).Content
+`
+
 - Settings > Backup & Restore > Import Backup JSON
 - Restore Backup
 - Configure LDAP Server
@@ -15,7 +22,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 - AD User Correlation
 - AD User Create v1.1
 - AD User Duplicates v1.1
-- Audit App v1.1
+- Audit App v1.2
 - Config Locations
 - Dashboard
 - Google User Correlation
@@ -25,7 +32,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Override Flags v1.1
 
 ## Filters
-- AD Group Management v1.0
+- AD Group Management
     - app_adgroupmanagement_listgroups
 	- app_adgroupmanagement_members
 	- app_adgroupmanagement_members_available
@@ -96,6 +103,8 @@ The purpose of this repository to build a framework that can be used as a jump o
     - ```OneRosterInfiniteCampus``` = Infinite Campus OneRoster v1.2
 
 # Scripts Included
+- Installation
+    - Install_Framework.ps1
 - Proxy Settings
     - Delete_NIM_Proxy_Settings.reg
 	    - Remove all registry settings that allow proxy
