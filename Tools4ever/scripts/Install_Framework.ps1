@@ -26,7 +26,7 @@ try {
     $releases = "https://api.github.com/repos/$($repo)/releases"
 
     Write-Output "Determining latest release"
-    $download = (Invoke-WebRequest $releases | ConvertFrom-Json)[0].zipball_url
+    $download = (Invoke-WebRequest $releases -UseBasicParsing | ConvertFrom-Json)[0].zipball_url
     $name = "NIM-Framework-Baseline"
     $zip = "$($name).zip"
     $dir = "$name"
