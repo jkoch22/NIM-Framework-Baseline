@@ -20,18 +20,18 @@ The purpose of this repository to build a framework that can be used as a jump o
 # Features 
 
 ## Apps
-- AD Group Management v1.1
+- AD Group Management
 - AD User Correlation
-- AD User Create v1.1
-- AD User Duplicates v1.1
-- Audit App v1.2
+- AD User Create
+- AD User Duplicates
+- Audit App
 - Config Locations
 - Dashboard
 - Google User Correlation
 - Google User Duplicates
-- NIM User Management v1.1
+- NIM User Management
 - T4E Template
-- Override Flags v1.1
+- Override Flags
 
 ## Filters
 - AD Group Management
@@ -105,7 +105,7 @@ The purpose of this repository to build a framework that can be used as a jump o
     - ```OneRosterInfiniteCampus``` = Infinite Campus OneRoster v1.2
 
 # Scripts Included
-- Installation
+- Install Framework
     - Install_Framework.ps1
 - Proxy Settings
     - Delete_NIM_Proxy_Settings.reg
@@ -121,6 +121,12 @@ The purpose of this repository to build a framework that can be used as a jump o
 - AD Tools
     - Install_AD_Tools.ps1
         - Install Active Directory Tools
+- Backup NIM Service
+    - Backup_NIM_Service.ps1
+        - Back up Program Files and Program Data for NIM
+- Upgrade NIM
+	- Upgrade_NIM.ps1
+ 		- Backup and upgrade NIM
 		
 
 # Framework Documentation
