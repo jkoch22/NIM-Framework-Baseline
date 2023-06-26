@@ -60,6 +60,15 @@ try {
     Write-Output "Installing extra image files..."
     Copy-Item -Recurse -Path "$($path)\_source\ProgramData\Tools4ever\NIM\config\images\" -Destination "$($installationPath)" -Force -Verbose
 
+# Configure Memory Settings
+    Write-Output ""
+    $input = Read-Host -Prompt "Configure Memory Settings for Service? [Default: Y]"
+    if($input -ne 'N')
+    {
+        Write-Output "Configuring Memory Settings for Service..."
+        Invoke-Command {reg import "$($path)\scripts\Set_NIM_Memory_16gb.reg" *>&1 | Out-Null}    
+    }
+
 # Setup Windows Defender
     $input = Read-Host -Prompt "Configure Windows Defender Exclusions? [Default: Y]"
     if($input -ne 'N')
@@ -68,13 +77,12 @@ try {
         & "$($path)\scripts\Set_Windows_Defender_Exclusions.ps1"
     }
 
-# Configure Memory Settings
-    Write-Output ""
-    $input = Read-Host -Prompt "Configure Memory Settings for Service? [Default: Y]"
+# Install AD Tools
+	$input = Read-Host -Prompt "Configure AD Tools? [Default: Y]"
     if($input -ne 'N')
     {
-        Write-Output "Configuring Memory Settings for Service..."
-        Invoke-Command {reg import "$($path)\scripts\Set_NIM_Memory_16gb.reg" *>&1 | Out-Null}    
+        Write-Output "Configuring AD Tools...`n"
+        & "$($path)\scripts\Install_AD_Tools.ps1"
     }
 
 Write-Output "`nInstallation Completed"
