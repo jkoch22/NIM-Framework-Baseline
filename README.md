@@ -8,7 +8,7 @@ The purpose of this repository to build a framework that can be used as a jump o
 
 
 `
-	iex (iwr https://raw.githubusercontent.com/Tools4ever-NIM/NIM-Framework-Baseline/main/Tools4ever/scripts/Install_Framework.ps1).Content
+	iex (iwr https://raw.githubusercontent.com/Tools4ever-NIM/NIM-Framework-Baseline/main/Tools4ever/scripts/Install_Framework.ps1 -UseBasicParsing).Content
 `
 
 - Settings > License > Add License
