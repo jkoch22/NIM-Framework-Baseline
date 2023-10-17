@@ -91,7 +91,7 @@ Write-Output "Starting Framework installation"
     {
         # Download latest release
         try {
-            $repo = "Tools4ever-NIM/NIM-Framework-Baseline"
+            $repo = "Tools4ever-NIM/NIM-System-REST-Google-Workspace"
             
             $releases = "https://api.github.com/repos/$($repo)/releases"
 
