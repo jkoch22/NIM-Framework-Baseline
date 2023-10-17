@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="user-plus-light.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   width="512"
+   height="512"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16">
+    <linearGradient
+       id="linearGradient840"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop838" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.88535511"
+     inkscape:cx="303.26814"
+     inkscape:cy="268.81869"
+     inkscape:window-width="1920"
+     inkscape:window-height="1129"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Background"
+     style="display:inline">
+    <circle
+       style="fill:#2a7de1;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       id="path3583"
+       cx="256.58478"
+       cy="255.80783"
+       r="224.20383" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Foreground"
+     style="display:inline">
+    <path
+       d="m 198.86315,198.4911 a 37.681667,40.260296 0 1 1 75.36333,0 37.681667,40.260296 0 1 1 -75.36333,0 z m 55.6197,87.23064 c 31.40139,0 56.91502,26.966 57.4253,60.39045 H 161.18149 c 0.47101,-33.42445 25.98464,-60.39045 57.42528,-60.39045 z M 236.54481,252.1715 a 50.242223,53.680397 0 1 0 0,-107.36079 50.242223,53.680397 0 1 0 0,107.36079 z m -17.93804,20.13013 c -38.66296,0 -69.98584,33.46638 -69.98584,74.77512 0,6.8778 5.22048,12.45553 11.65776,12.45553 h 152.53225 c 6.43728,0 11.65777,-5.57773 11.65777,-12.45553 0,-41.30874 -31.32289,-74.77512 -69.98586,-74.77512 z m 130.98304,0 c 0,3.69054 2.82612,6.71006 6.28028,6.71006 3.45415,0 6.28027,-3.01952 6.28027,-6.71006 v -33.55024 h 31.40139 c 3.45416,0 6.28028,-3.01952 6.28028,-6.71004 0,-3.69052 -2.82612,-6.71005 -6.28028,-6.71005 h -31.40139 v -33.55025 c 0,-3.69052 -2.82612,-6.71005 -6.28027,-6.71005 -3.45416,0 -6.28028,3.01953 -6.28028,6.71005 v 33.55025 h -31.4014 c -3.45414,0 -6.28026,3.01953 -6.28026,6.71005 0,3.69052 2.82612,6.71004 6.28026,6.71004 h 31.4014 z"
+       id="path10"
+       style="display:inline;fill:#ffffff;stroke-width:0.405726"
+       inkscape:transform-center-x="38.968985"
+       inkscape:transform-center-y="-15.824359" />
+  </g>
+</svg>

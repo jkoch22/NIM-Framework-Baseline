@@ -1,0 +1,1 @@
+{"jobdef_name":"_auditlog","tasks":[{"type":"crud","name":"_addAuditLogEntry","enabled":true,"threshold":1000000},{"type":"crud","name":"_addAuditLogEntryMembership","enabled":true,"threshold":100000}]}
