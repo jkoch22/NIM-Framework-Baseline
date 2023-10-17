@@ -112,6 +112,8 @@ The purpose of this repository to build a framework that can be used as a jump o
 ## Notification Templates
 - AD User Password Expiry
     - ad_user_passwordexpiry
+- Sync AD NIM
+    - sync_ad_nim 
 
 ## Scheduler
 - AD NIM Sync
@@ -122,6 +124,16 @@ The purpose of this repository to build a framework that can be used as a jump o
     - Imports AD and Google
 - Retention
     - Cleans up logging data
+
+## Global Variables
+- Global_AD_DeletePrefixAttribute
+    - Attribute used to tag delete dates for AD
+- Global_DeleteAfterDays
+    - Number of days in future to mark as delete
+- Global_AD_DeletePrefixValue
+    - Value given before delete date for AD
+- T4ELib
+    - [NIM Helper Function Library](https://github.com/Tools4ever-NIM/NIM-LIB-HelperFunctions)
     
 ## REST Connectors
 - Custom Schemas
