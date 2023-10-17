@@ -1,64 +1,64 @@
 Write-Output "Starting Framework installation"
 # Prompt for path input
-    $path = Read-Host -Prompt "Path of Tools4ever Directory [Default: C:\Tools4ever]"
-    Write-Output ""
-    
-    $installationPath = Read-Host -Prompt "Path of NIM Config Directory [Default: C:\ProgramData\Tools4ever\NIM\config]"
-    Write-Output ""
+	$path = Read-Host -Prompt "Path of Tools4ever Directory [Default: C:\Tools4ever]"
+	Write-Output ""
+	
+	$installationPath = Read-Host -Prompt "Path of NIM Config Directory [Default: C:\ProgramData\Tools4ever\NIM\config]"
+	Write-Output ""
 
-    if ([string]::IsNullOrWhiteSpace($path)) {
-	    $path = "C:\Tools4ever"
-    }
+	if ([string]::IsNullOrWhiteSpace($path)) {
+		$path = "C:\Tools4ever"
+	}
 
-    if ([string]::IsNullOrWhiteSpace($installationPath)) {
-	    $installationPath = "C:\ProgramData\Tools4ever\NIM\config"
-}
+	if ([string]::IsNullOrWhiteSpace($installationPath)) {
+		$installationPath = "C:\ProgramData\Tools4ever\NIM\config"
+	}
 
 # Setup Installation path
-$tempPath = "$($path)\temp"
-Write-Output "Creating temp path [$($tempPath)]"
-New-Item $tempPath -ItemType Directory -Force >$null 2>&1
+	$tempPath = "$($path)\temp"
+	Write-Output "Creating temp path [$($tempPath)]"
+	New-Item $tempPath -ItemType Directory -Force >$null 2>&1
 
 # Download Framework
-try {
-    $repo = "Tools4ever-NIM/NIM-Framework-Baseline"
-    
-    $releases = "https://api.github.com/repos/$($repo)/releases"
+	try {
+		$repo = "Tools4ever-NIM/NIM-Framework-Baseline"
+		
+		$releases = "https://api.github.com/repos/$($repo)/releases"
 
-    Write-Output "Determining latest release"
-    $download = (Invoke-WebRequest $releases -UseBasicParsing | ConvertFrom-Json)[0].zipball_url
-    $name = "NIM-Framework-Baseline"
-    $zip = "$($name).zip"
-    $dir = "$name"
-	$downloadPath = "$($tempPath)\$($dir)"
-    $dumpFile = "$($downloadPath)\$($zip)"
-	New-Item $downloadPath -ItemType Directory -Force >$null 2>&1
-    Write-Host Dowloading latest release
-    Invoke-WebRequest $download -Out $dumpFile
+		Write-Output "Determining latest release"
+		$download = (Invoke-WebRequest $releases -UseBasicParsing | ConvertFrom-Json)[0].zipball_url
+		$name = "NIM-Framework-Baseline"
+		$zip = "$($name).zip"
+		$dir = "$name"
+		$downloadPath = "$($tempPath)\$($dir)"
+		$dumpFile = "$($downloadPath)\$($zip)"
+		New-Item $downloadPath -ItemType Directory -Force >$null 2>&1
+		Write-Host Downloading latest release
+		Invoke-WebRequest $download -Out $dumpFile
 
-	$expandPath = "$($tempPath)\_installation"
-    Write-Output "Extracting [$($dumpFile)] release files to [$($expandPath)]"
-    Expand-Archive $dumpFile -DestinationPath $expandPath -Force
-} catch {
-    Write-Error "Failed to download release"
-    $_
-    break
-}
+		$expandPath = "$($tempPath)\_installation"
+		Write-Output "Extracting [$($dumpFile)] release files to [$($expandPath)]"
+		Expand-Archive $dumpFile -DestinationPath $expandPath -Force
+	} catch {
+		Write-Error "Failed to download release"
+		$_
+		break
+	}
 
 # Get Sub Folder
 	$sourcePath = (Get-ChildItem $expandPath -Directory -Force)[0].FullName
-	Copy-Item -Recurse -Path "$($sourcePath)\Tools4ever\*" -Destination $path -Force -Verbose
+	Copy-Item -Recurse -Path "$($sourcePath)\Tools4ever\*" -Destination $path -Force
 
 # Clean Up Installation files
 	Remove-Item $tempPath -Recurse -Force -Confirm:$false
 
 # Copy Schema files
 	Write-Output "Installing schema files..."
-	Copy-Item -Recurse -Path "$($path)\_source\ProgramData\Tools4ever\NIM\config\rest\" -Destination "$($installationPath)" -Force -Verbose
+	Copy-Item -Recurse -Path "$($path)\_source\ProgramData\Tools4ever\NIM\config\rest\" -Destination "$($installationPath)" -Force
 
 # Copy Images
     Write-Output "Installing extra image files..."
-    Copy-Item -Recurse -Path "$($path)\_source\ProgramData\Tools4ever\NIM\config\images\" -Destination "$($installationPath)" -Force -Verbose
+    Copy-Item -Recurse -Path "$($path)\_source\ProgramData\Tools4ever\NIM\config\images\" -Destination "$($installationPath)" -Force
 
 # Configure Memory Settings
     Write-Output ""
@@ -83,6 +83,44 @@ try {
     {
         Write-Output "Configuring AD Tools...`n"
         & "$($path)\scripts\Install_AD_Tools.ps1"
+    }
+
+# Update Google Connector
+    $input = Read-Host -Prompt "Update Google Connector? [Default: Y]"
+    if($input -ne 'N')
+    {
+        # Download latest release
+        try {
+            $repo = "Tools4ever-NIM/NIM-Framework-Baseline"
+            
+            $releases = "https://api.github.com/repos/$($repo)/releases"
+
+            Write-Output "Determining latest release"
+            $download = (Invoke-WebRequest $releases -UseBasicParsing | ConvertFrom-Json)[0].zipball_url
+            $name = "NIM-System-REST-Google-Workspace"
+            $zip = "$($name).zip"
+            $dir = "$name"
+            $downloadPath = "$($tempPath)\$($dir)"
+            $dumpFile = "$($downloadPath)\$($zip)"
+            New-Item $downloadPath -ItemType Directory -Force >$null 2>&1
+            Write-Host Downloading latest release
+            Invoke-WebRequest $download -Out $dumpFile
+
+            $expandPath = "$($tempPath)\_google"
+            Write-Output "Extracting [$($dumpFile)] release files to [$($expandPath)]"
+            Expand-Archive $dumpFile -DestinationPath $expandPath -Force
+        } catch {
+            Write-Error "Failed to download release"
+            $_
+            break
+        }
+
+        # Archive old connector
+        Copy-Item "C:\Program Files\Tools4ever\NIM\sysconfig\rest\systems\Google.json" "C:\Program Files\Tools4ever\NIM\sysconfig\rest\systems\Google.json.$(Get-Date -Format "yyyyMMdd_HHmmss").org" -Force
+        
+        # Replace with new connector
+        $connectorPath = (Get-ChildItem $expandPath -Recurse -Filter "Google.json").FullName
+        Copy-Item $connectorPath "C:\Program Files\Tools4ever\NIM\sysconfig\rest\systems\Google.json" -Force
     }
 
 Write-Output "`nInstallation Completed"
