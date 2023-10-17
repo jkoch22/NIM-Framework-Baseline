@@ -7,9 +7,9 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Install Latest Framework
 
 
-`
-	iex (iwr https://raw.githubusercontent.com/Tools4ever-NIM/NIM-Framework-Baseline/main/Tools4ever/scripts/Install_Framework.ps1 -UseBasicParsing).Content
-`
+	`
+		iex (iwr https://raw.githubusercontent.com/Tools4ever-NIM/NIM-Framework-Baseline/main/Tools4ever/scripts/Install_Framework.ps1 -UseBasicParsing).Content
+	`
 
 - Settings > License > Add License
 - Settings > Backup & Restore > Import Backup JSON
@@ -30,8 +30,10 @@ The purpose of this repository to build a framework that can be used as a jump o
 - Google User Correlation
 - Google User Duplicates
 - NIM User Management
-- T4E Template
+- Onboarding
 - Override Flags
+- T4E Template
+
 
 ## Filters
 - AD Group Management
@@ -49,6 +51,9 @@ The purpose of this repository to build a framework that can be used as a jump o
 - AD NIM Sync
     - ad_nim_users_active
     - ad_nim_users_disable
+    - ad_nim_users_delete
+- Audit App
+    - app_auditapp_persons  
 - Google User Correlation
     - apps_googleusercorrelation_listusers
 - Google User Duplicates
@@ -58,18 +63,35 @@ The purpose of this repository to build a framework that can be used as a jump o
     - app_nimmgmt_memberships
     - app_nimmgmt_membership_available
 - Override Flags
-	- app_override_users
-	- app_override_users_available
+    - app_override_users
+    - app_override_users_available
+- Role Model Scoping
+    - rolemodel_scope_ad_exclude
+    - rolemodel_scope_ad_include
+    - rolemodel_scope_google_exclude
+    - rolemodel_scope_google_include
+    - rolemodel_scope_nim_exclude
+- Session
+    - session_ad_user_view 
 
 ## Name Generation
 - AD User Create
     - app_adusercreate
+
+## Password Generation
+- Random Complex
+- Random Simple
 
 ## Mappings
 - AD NIM Sync
     - ad_nim_user_create
     - ad_nim_user_update
     - ad_nim_user_disable
+    - ad_nim_user_delete
+
+## Roles
+- Active
+    - NIM_Admins
 
 ## Jobs
 - AD NIM Sync
@@ -79,24 +101,27 @@ The purpose of this repository to build a framework that can be used as a jump o
 - AD User Duplicates
     - aduserduplicates_duplicateusersbyid
 - Audit App
-    - auditapp_creates
-    - auditapp_deletes
-    - auditapp_last7days
-    - auditapp_updates
+    - auditapp_attributes_recentchanges
+    - auditapp_attributes_search
+    - auditapp_log_search
+    - auditapp_memberships_recentchanges
+    - auditapp_memberships_search
 - Google User Duplicates
     - googleuserduplicates_duplicatesusersbyid 
 
 ## Notification Templates
 - AD User Password Expiry
-	- ad_user_passwordexpiry
+    - ad_user_passwordexpiry
 
 ## Scheduler
 - AD NIM Sync
-	- Syncs Domain Admins from AD to NIM Internal Users
+    - Syncs Domain Admins from AD to NIM Internal Users
 - AD User Password Expiry
-	- Notifies user by email when password is expiring in 15, 7, 3, 2, 1 day(s)
+    - Notifies user by email when password is expiring in 15, 7, 3, 2, 1 day(s)
+- Import Data
+    - Imports AD and Google
 - Retention
-	- Cleans up logging data
+    - Cleans up logging data
     
 ## REST Connectors
 - Custom Schemas
