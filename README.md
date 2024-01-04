@@ -4,7 +4,7 @@
 The purpose of this repository to build a framework that can be used as a jump off point to build a lifecycle automation in NIM. This will also contain other useful tools to help you enhance you experience with NIM.
 
 # Installation
-- Install Latest Framework
+- Install Latest Framework (Run as Admin in Powershell)
 
 
 	`
