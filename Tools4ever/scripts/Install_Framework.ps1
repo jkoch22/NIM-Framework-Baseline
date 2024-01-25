@@ -84,43 +84,5 @@ Write-Output "Starting Framework installation"
         Write-Output "Configuring AD Tools...`n"
         & "$($path)\scripts\Install_AD_Tools.ps1"
     }
-
-# Update Google Connector
-    $input = Read-Host -Prompt "Update Google Connector? [Default: Y]"
-    if($input -ne 'N')
-    {
-        # Download latest release
-        try {
-            $repo = "Tools4ever-NIM/NIM-System-REST-Google-Workspace"
-            
-            $releases = "https://api.github.com/repos/$($repo)/releases"
-
-            Write-Output "Determining latest release"
-            $download = (Invoke-WebRequest $releases -UseBasicParsing | ConvertFrom-Json)[0].zipball_url
-            $name = "NIM-System-REST-Google-Workspace"
-            $zip = "$($name).zip"
-            $dir = "$name"
-            $downloadPath = "$($tempPath)\$($dir)"
-            $dumpFile = "$($downloadPath)\$($zip)"
-            New-Item $downloadPath -ItemType Directory -Force >$null 2>&1
-            Write-Host Downloading latest release
-            Invoke-WebRequest $download -Out $dumpFile
-
-            $expandPath = "$($tempPath)\_google"
-            Write-Output "Extracting [$($dumpFile)] release files to [$($expandPath)]"
-            Expand-Archive $dumpFile -DestinationPath $expandPath -Force
-        } catch {
-            Write-Error "Failed to download release"
-            $_
-            break
-        }
-
-        # Archive old connector
-        Copy-Item "C:\Program Files\Tools4ever\NIM\sysconfig\rest\systems\Google.json" "C:\Program Files\Tools4ever\NIM\sysconfig\rest\systems\Google.json.$(Get-Date -Format "yyyyMMdd_HHmmss").org" -Force
-        
-        # Replace with new connector
-        $connectorPath = (Get-ChildItem $expandPath -Recurse -Filter "Google.json").FullName
-        Copy-Item $connectorPath "C:\Program Files\Tools4ever\NIM\sysconfig\rest\systems\Google.json" -Force
-    }
-
+    
 Write-Output "`nInstallation Completed"
