@@ -75,37 +75,46 @@ Write-Output ""
     if($input -ne 'N')
     {
         Write-Output "Configuring Service Settings ..."
-        $installationPath
-		
-		$jsonFilePath = "$($installationPath)\settings.json"
+        $jsonFilePath = "$($installationPath)\settings.json"
+        
+        # Check if the JSON file exists, if not, create it with default content
+        if (-Not (Test-Path -Path $jsonFilePath)) {
+            $defaultContent = @{
+                mfa = "Optional"
+                worker_thread_auditing_query_max = 10
+                worker_thread_auditing_storage = $true
+            }
+            $defaultContent | ConvertTo-Json -Depth 32 | Set-Content -Path $jsonFilePath -Force
+        } else {
+            # Read the JSON file
+            $jsonContent = Get-Content -Path $jsonFilePath -Raw | ConvertFrom-Json
 
-		# Read the JSON file
-		$jsonContent = Get-Content -Path $jsonFilePath -Raw | ConvertFrom-Json
+            # Update the "mfa" property to "Optional", if it doesn't exist, add it
+            if ($null -eq $jsonContent.mfa) {
+                $jsonContent | Add-Member -MemberType NoteProperty -Name "mfa" -Value "Optional"
+            } else {
+                $jsonContent.mfa = "Optional"
+            }
 
-		# Update the "mfa" property to "Optional", if it doesn't exist, add it
-		if ($null -eq $jsonContent.mfa) {
-			$jsonContent | Add-Member -MemberType NoteProperty -Name "mfa" -Value "Optional"
-		} else {
-			$jsonContent.mfa = "Optional"
-		}
+            # Update the "worker_thread_auditing_query_max" property to 10, if it doesn't exist, add it
+            if ($null -eq $jsonContent.worker_thread_auditing_query_max) {
+                $jsonContent | Add-Member -MemberType NoteProperty -Name "worker_thread_auditing_query_max" -Value 10
+            } else {
+                $jsonContent.worker_thread_auditing_query_max = 10
+            }
 
-		# Update the "worker_thread_auditing_query_max" property to 10, if it doesn't exist, add it
-		if ($null -eq $jsonContent.worker_thread_auditing_query_max) {
-			$jsonContent | Add-Member -MemberType NoteProperty -Name "worker_thread_auditing_query_max" -Value 10
-		} else {
-			$jsonContent.worker_thread_auditing_query_max = 10
-		}
+            # Update the "worker_thread_auditing_storage" property to true, if it doesn't exist, add it
+            if ($null -eq $jsonContent.worker_thread_auditing_storage) {
+                $jsonContent | Add-Member -MemberType NoteProperty -Name "worker_thread_auditing_storage" -Value $true
+            } else {
+                $jsonContent.worker_thread_auditing_storage = $true
+            }
 
-		# Update the "worker_thread_auditing_storage" property to true, if it doesn't exist, add it
-		if ($null -eq $jsonContent.worker_thread_auditing_storage) {
-			$jsonContent | Add-Member -MemberType NoteProperty -Name "worker_thread_auditing_storage" -Value $true
-		} else {
-			$jsonContent.worker_thread_auditing_storage = $true
-		}
-
-		# Convert the updated content back to JSON format
-		$jsonContent | ConvertTo-Json -Depth 32 | Set-Content -Path $jsonFilePath -Force
+            # Convert the updated content back to JSON format
+            $jsonContent | ConvertTo-Json -Depth 32 | Set-Content -Path $jsonFilePath -Force
+        }
     }
+
 
 # Setup Windows Defender
     $input = Read-Host -Prompt "Configure Windows Defender Exclusions? [Default: Y]"
