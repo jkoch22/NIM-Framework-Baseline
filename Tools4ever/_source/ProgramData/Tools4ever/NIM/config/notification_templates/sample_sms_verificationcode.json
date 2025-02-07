@@ -1,0 +1,1 @@
+{"name":"sample_sms_verificationcode","type":"SMS","to":"{var.event.configuration.SmsPhoneNumber1}","message":"{var.event.data.vprConfirmationCode} is your password reset verification code. Please do not share this code."}
