@@ -1,0 +1,1 @@
+{"name":"sample_sms_confirmation","type":"SMS","to":"{var.event.configuration.SmsPhoneNumber1}","message":"Your password has been reset. If this is unexpected, please contact your IT department"}

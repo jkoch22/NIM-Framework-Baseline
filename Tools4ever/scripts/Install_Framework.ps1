@@ -63,8 +63,7 @@ Write-Output "Starting Framework installation"
 # Configure Memory Settings
     Write-Output ""
     $input = Read-Host -Prompt "Configure Memory Settings for Service? [Default: Y]"
-    if($input -ne 'N')
-    {
+    if($input -ne 'N') {
         Write-Output "Configuring Memory Settings for Service..."
         Invoke-Command {reg import "$($path)\scripts\Set_NIM_Memory_16gb.reg" *>&1 | Out-Null}    
     }
@@ -72,8 +71,7 @@ Write-Output "Starting Framework installation"
 # Update Service Settings
 Write-Output ""
     $input = Read-Host -Prompt "Update Service Settings? [Default: Y]"
-    if($input -ne 'N')
-    {
+    if($input -ne 'N') {
         Write-Output "Configuring Service Settings ..."
         $jsonFilePath = "$($installationPath)\settings.json"
         
@@ -118,11 +116,35 @@ Write-Output ""
 
 # Setup Windows Defender
     $input = Read-Host -Prompt "Configure Windows Defender Exclusions? [Default: Y]"
-    if($input -ne 'N')
-    {
+    if($input -ne 'N') {
         Write-Output "Configuring Windows Defender...`n"
         & "$($path)\scripts\Set_Windows_Defender_Exclusions.ps1"
     }
+
+# Setup Windows Firewall
+    $input = Read-Host -Prompt "Configure Windows Firewall Rules? [Default: Y]"
+    if($input -ne 'N') {
+        # Define rule names
+        $ruleNames = @("Tools4ever_NIM_Allow_HTTP", "Tools4ever_NIM_Allow_HTTPS")
+
+        # Define ports
+        $ports = @(80, 443)
+
+        # Loop through the ports and rule names
+
+        for ($i = 0; $i -lt $ports.Count; $i++) {
+            $ruleName = $ruleNames[$i]
+            $port = $ports[$i]
+
+            # Check if the rule already exists
+            if (-not (Get-NetFirewallRule -DisplayName $ruleName -ErrorAction SilentlyContinue)) {
+                New-NetFirewallRule -DisplayName $ruleName -Direction Inbound -Action Allow -Protocol TCP -LocalPort $port | Out-Null
+                Write-Output "`nFirewall rule '$($ruleName)' for TCP port $($port) added."
+            } else {
+                Write-Output "`nFirewall rule '$($ruleName)' for TCP port $($port) already exists."
+            }
+        }
+}
 
 # Install AD Tools
 	$input = Read-Host -Prompt "Configure AD Tools? [Default: Y]"
