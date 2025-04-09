@@ -27,37 +27,41 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 	New-Item $tempPath -ItemType Directory -Force >$null 2>&1
 
 # Download Framework
-	try {
-		$repo = "Tools4ever-NIM/NIM-Framework-Baseline"
-		
-		$releases = "https://api.github.com/repos/$($repo)/releases"
+    Write-Output ""
+    $promptInput = Read-Host -Prompt "Download Framework? [Default: Y]"
+    if($promptInput -ne 'N') {
+        try {
+            $repo = "Tools4ever-NIM/NIM-Framework-Baseline"
+            
+            $releases = "https://api.github.com/repos/$($repo)/releases"
 
-		Write-Output "Determining latest release"
-		$download = (Invoke-WebRequest $releases -UseBasicParsing | ConvertFrom-Json)[0].zipball_url
-		$name = "NIM-Framework-Baseline"
-		$zip = "$($name).zip"
-		$dir = "$name"
-		$downloadPath = "$($tempPath)\$($dir)"
-		$dumpFile = "$($downloadPath)\$($zip)"
-		New-Item $downloadPath -ItemType Directory -Force >$null 2>&1
-		Write-Host Downloading latest release
-		Invoke-WebRequest $download -Out $dumpFile
+            Write-Output "Determining latest release"
+            $download = (Invoke-WebRequest $releases -UseBasicParsing | ConvertFrom-Json)[0].zipball_url
+            $name = "NIM-Framework-Baseline"
+            $zip = "$($name).zip"
+            $dir = "$name"
+            $downloadPath = "$($tempPath)\$($dir)"
+            $dumpFile = "$($downloadPath)\$($zip)"
+            New-Item $downloadPath -ItemType Directory -Force >$null 2>&1
+            Write-Host Downloading latest release
+            Invoke-WebRequest $download -Out $dumpFile
 
-		$expandPath = "$($tempPath)\_installation"
-		Write-Output "Extracting [$($dumpFile)] release files to [$($expandPath)]"
-		Expand-Archive $dumpFile -DestinationPath $expandPath -Force
-	} catch {
-		Write-Error "Failed to download release"
-		$_
-		break
-	}
+            $expandPath = "$($tempPath)\_installation"
+            Write-Output "Extracting [$($dumpFile)] release files to [$($expandPath)]"
+            Expand-Archive $dumpFile -DestinationPath $expandPath -Force
+        } catch {
+            Write-Error "Failed to download release"
+            $_
+            break
+        }
 
-# Get Sub Folder
-	$sourcePath = (Get-ChildItem $expandPath -Directory -Force)[0].FullName
-	Copy-Item -Recurse -Path "$($sourcePath)\Tools4ever\*" -Destination $path -Force
+        # Get Sub Folder
+            $sourcePath = (Get-ChildItem $expandPath -Directory -Force)[0].FullName
+            Copy-Item -Recurse -Path "$($sourcePath)\Tools4ever\*" -Destination $path -Force
 
-# Clean Up Installation files
-	Remove-Item $tempPath -Recurse -Force -Confirm:$false
+        # Clean Up Installation files
+            Remove-Item $tempPath -Recurse -Force -Confirm:$false
+    }
 
 # Copy Dashboard App
     Write-Output "Installing Dashboard App..."
@@ -186,6 +190,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 
 # Setup Windows Defender
+    Write-Output ""
     $promptInput = Read-Host -Prompt "Configure Windows Defender Exclusions? [Default: Y]"
     if($promptInput -ne 'N') {
         Write-Output "Configuring Windows Defender...`n"
@@ -193,6 +198,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     }
 
 # Setup Windows Firewall
+    Write-Output ""
     $promptInput = Read-Host -Prompt "Configure Windows Firewall Rules? [Default: Y]"
     if($promptInput -ne 'N') {
         # Define rule names
@@ -217,6 +223,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 
 # Install AD Tools
+    Write-Output ""
 	$promptInput = Read-Host -Prompt "Configure AD Tools? [Default: Y]"
     if($promptInput -ne 'N')
     {
@@ -225,6 +232,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     }
 
 # Restart Service
+    Write-Output ""
     $promptInput = Read-Host -Prompt "Restart Service? [Default: Y]"
     if($promptInput -ne 'N') {
         Write-Output "Restarting NIM Service..."

@@ -1,0 +1,1 @@
+{"jobdef_name":"App_TEAM_Membership_Sync","meta_config":{"created_date_time":1744146241088,"created_by_id":2,"modified_date_time":0,"modified_by_id":-1,"notes":"","tags":["app_TEAM"]},"tasks":[{"type":"crud","name":"App_TEAM_Membership_Delete","enabled":true,"threshold":10}]}

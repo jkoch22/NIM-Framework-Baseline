@@ -3,5 +3,6 @@ $NimData = (Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\NIM\C
 
 Add-MpPreference -ExclusionPath "$((Get-Item -Path $NimService).DirectoryName)"
 Add-MpPreference -ExclusionPath "$($NimService)"
+Add-MpPreference -ExclusionPath "$((Get-Item -Path $NimService).DirectoryName)\nim_updater.exe"
 Add-MpPreference -ExclusionPath "$((Get-Item -Path $NimService).DirectoryName)\node.exe"
 Add-MpPreference -ExclusionPath "$($NimData)"

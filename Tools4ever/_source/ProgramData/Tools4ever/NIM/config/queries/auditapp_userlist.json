@@ -1,1 +1,0 @@
-{"name":"AuditApp_UserList","query":"SELECT ID,Name\nFROM Users\nWHERE ID <> 0","params":[],"columns":[{"name":"ID","type":1},{"name":"Name","type":0}]}

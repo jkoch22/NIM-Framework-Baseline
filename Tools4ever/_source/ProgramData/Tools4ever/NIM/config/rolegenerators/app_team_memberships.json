@@ -1,0 +1,26 @@
+{
+  "name": "app_TEAM_Memberships",
+  "role_generator_filter": "RoleModel_Generator_TEAM",
+  "role_name_column": "calc_RoleName",
+  "role_member_filter": "App_TEAM_Membership_View",
+  "role_member_filter_params": {
+    
+  },
+  "role_groups": [
+    {
+      "enabledFlag": true,
+      "systemName": "AD",
+      "groupColName": "Groups",
+      "roleGeneratorFilterLookupName": "Exists",
+      "filterColumn": "objectGUID",
+      "membershipCol": "Memberships",
+      "memberCol": "Users"
+    }
+  ],
+  "options": {
+    "createRoles": true,
+    "deleteRoles": false,
+    "updateRolesGroupsAdd": true,
+    "updateRolesGroupsDelete": false
+  }
+}
