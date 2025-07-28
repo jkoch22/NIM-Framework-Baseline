@@ -63,10 +63,6 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
             Remove-Item $tempPath -Recurse -Force -Confirm:$false
     }
 
-# Copy Dashboard App
-    Write-Output "Installing Dashboard App..."
-    Copy-Item -Recurse -Path "$($path)\_source\ProgramData\Tools4ever\NIM\config\apps\Dashboard" -Destination "$($installationPath)\apps" -Force
-
 # Copy Schema files
 	Write-Output "Installing schema files..."
 	Copy-Item -Recurse -Path "$($path)\_source\ProgramData\Tools4ever\NIM\config\rest\" -Destination "$($installationPath)" -Force
